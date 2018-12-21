@@ -1,7 +1,7 @@
 [colors]
 
 # special
-font = DejaVu Sans Mono
+font = Monospace 9
 foreground      = #e1e1e1
 foreground_bold = #e1e1e1
 cursor          = #e1e1e1
