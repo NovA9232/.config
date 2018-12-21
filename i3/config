@@ -252,6 +252,7 @@ gaps outer 0
 bindsym Mod4+g exec firefox
 bindsym Mod4+c exec thunar
 bindsym Mod4+Shift+h exec systemctl suspend
+exec setxkbmap gb
 exec compton -f
 exec_always --no-startup-id ~/.config/i3/polybar.sh
 exec_always nitrogen --restore --set-auto
