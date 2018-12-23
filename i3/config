@@ -250,10 +250,10 @@ gaps outer 0
 #exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/josh/.config/i3/workspace-2.json'"
 
 bindsym Mod4+g exec firefox
-bindsym Mod4+c exec thunar
+bindsym Mod4+c exec nautilus
 bindsym Mod4+Shift+h exec systemctl suspend
 exec setxkbmap gb
-exec compton -f
+exec compton --blur-background --blur-kern 7x7box --resize-damage 3
 exec_always --no-startup-id ~/.config/i3/polybar.sh
 exec_always nitrogen --restore --set-auto
 focus_follows_mouse yes
