@@ -253,7 +253,7 @@ bindsym Mod4+g exec firefox
 bindsym Mod4+c exec nautilus
 bindsym Mod4+Shift+h exec systemctl suspend
 exec setxkbmap gb
-exec compton --blur-background --blur-kern 7x7box --resize-damage 3
+exec compton --blur-background --blur-kern 9x9gaussian --resize-damage 4
 exec_always --no-startup-id ~/.config/i3/polybar.sh
 exec_always nitrogen --restore --set-auto
 focus_follows_mouse yes
