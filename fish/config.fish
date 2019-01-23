@@ -1,1 +1,1 @@
-alias youtube="surf https://www.youtube.co.uk/"
+alias surfYoutube="surf https://www.youtube.co.uk/"
