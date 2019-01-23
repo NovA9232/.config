@@ -248,6 +248,6 @@ gaps outer 0
 
 #exec budgie-panel --replace
 
-bindsym Mod4+g exec surf https://duckduckgo.com/
+bindsym Mod4+g exec surf -z 1.5 https://duckduckgo.com/
 bindsym Mod4+c exec nautilus
 focus_follows_mouse yes
