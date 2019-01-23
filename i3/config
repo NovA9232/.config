@@ -15,12 +15,14 @@
 # layout, use the i3-config-wizard
 #
 
-##Sort out displays first
-exec ~/displayPos.sh
-
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+# Load wallpaper and visual tings
+exec_always nitrogen --restore --set-auto
+exec compton -f --no-fading-openclose
+exec_always --no-startup-id ~/.config/i3/polybar.sh
 
 # Variable setting
 set $defaultmod Mod4
@@ -33,20 +35,16 @@ set $right l
 # is used in the bar {} block below.
 font pango:Awesome 12
 
-########## Autolaunch ##########
-exec --no-startup-id nm-applet
-exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
-
 ########## Keybindings ##########
-bindsym Mod4+Shift+s exec i3lock-fancy-dualmonitor # Easier locking
+bindsym Mod4+Shift+s exec i3lock-fancy # Easier locking
 
 ### Backlight ###
 # Note: If light doesn't work, install xbacklight and 1) uncomment the two lines below.
 # 2) Comment out the exec light lines.
 # bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 # bindsym XF86MonBrightnessDown exec xbacklight -dec 10
-bindsym XF86MonBrightnessUp exec light -A 10 # Increase Brightness
-bindsym XF86MonBrightnessDown exec light -U 10 # Decrease Brightness
+bindsym XF86MonBrightnessUp exec light -A 5 # Increase Brightness
+bindsym XF86MonBrightnessDown exec light -U 5 # Decrease Brightness
 
 ### Media Player ###
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -75,7 +73,6 @@ bindsym Mod4+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym Mod4+d exec rofi -modi drun -show drun -show-icons -drun-icon-theme papirus
-#-lines 3 -eh 2 -width 100 -padding 800
 
 # change focus
 bindsym Mod4+$left focus left
@@ -249,11 +246,8 @@ gaps outer 0
 #Get layout for wkspace2
 #exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/josh/.config/i3/workspace-2.json'"
 
-bindsym Mod4+g exec firefox
-bindsym Mod4+c exec thunar
-bindsym Mod4+Shift+h exec systemctl suspend
-exec setxkbmap gb
-exec compton -f
-exec_always --no-startup-id ~/.config/i3/polybar.sh
-exec_always nitrogen --restore --set-auto
+#exec budgie-panel --replace
+
+bindsym Mod4+g exec surf https://duckduckgo.com/
+bindsym Mod4+c exec nautilus
 focus_follows_mouse yes
