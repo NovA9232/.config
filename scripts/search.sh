@@ -1,10 +1,4 @@
 #!/bin/bash
-writeToLog() {	# $1 is parameter 1, which is the string to write.
-	if [ ! -d ~/.config/scripts/logs/ ]; then	# if directory for logs doesn't exist, then make one.
-		mkdir ~/.config/scripts/logs/
-	fi
-	echo $1 > ~/.config/scripts/logs/search.log
-}
 
 searchT=$(dmenu -fn "DejaVuSansMono Nerd Font 12" -p "Search:")   # Open dmenu
 if [ $? -eq 0 ]; then  # If dmenu ran fine.
@@ -16,10 +10,10 @@ if [ $? -eq 0 ]; then  # If dmenu ran fine.
 		surf -z 1.5 "https://duckduckgo.com/"
 	fi
 	if [ ! $? -eq 0 ]; then
-		writeToLog "surf exited with error code: $?"
+		./tools/writeToLog.sh "surf exited with error code: $?"
 	fi
 else
 	if [ ! $? -eq 1 ]; then # if the error was not 1 - which is the number dmenu gives when the escape key is pressed.
-		writeToLog "dmenu exited with error code: EEE $?"
+		./tools/writeToLog.sh "dmenu exited with error code: $?"
 	fi
 fi
