@@ -2,7 +2,7 @@
 
 browser=surf  # Set browser here
 searchEng="https://duckduckgo.com/"
-qryFmt="?q=" # Set query formatting for search engine.
+brQryFmt="?q=" # Set query formatting for search engine.
 extraCmds=""  # Set any extra commands for all browsers here
 
 if [ $browser = surf ]; then    # Set browser specific extras like this
@@ -21,13 +21,14 @@ if [ $? -eq 0 ]; then  # If dmenu ran fine.
 
 		elif [ $lower = "yt" ]; then
 			$browser "https://www.youtube.co.uk/"
+
 		else
 			IFS=" "; searchArr=($searchT); unset IFS;       # Split string by spaces.
 			searchString="$(IFS="+"; echo "${searchArr[*]}")" # Join the string back together with '+'
-			$browser $extraCmds "$searchEng$qryFmt$searchString"	# Open browser with new search string.
+			$browser $extraCmds $searchEng$brQryFmt$searchString	# Open browser with new search string.
 		fi
 	else
-		$browser $extraCmds "$searchEng"
+		$browser $extraCmds $searchEng
 	fi
 
 	if [ ! $? -eq 0 ]; then
@@ -38,3 +39,5 @@ else
 		./tools/writeToLog.sh "dmenu exited with error code: $?"
 	fi
 fi
+
+# NOTE: If using duckduckgo, then you can input '\search' takes you to the first search result. This is useful for popular websites.
