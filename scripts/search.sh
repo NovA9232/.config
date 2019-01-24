@@ -1,14 +1,35 @@
 #!/bin/bash
 
+browser=surf  # Set browser here
+searchEng="https://duckduckgo.com/"
+qryFmt="?q=" # Set query formatting for search engine.
+extraCmds=""  # Set any extra commands for all browsers here
+
+if [ $browser = surf ]; then    # Set browser specific extras like this
+	extraCmds="$extraCmds -z 1.2"
+fi
+
 searchT=$(dmenu -fn "DejaVuSansMono Nerd Font 12" -p "Search:")   # Open dmenu
 if [ $? -eq 0 ]; then  # If dmenu ran fine.
-	IFS=" "; searchArr=($searchT); unset IFS;       # Split string by spaces.
-	searchString=$(IFS="+"; echo "${searchArr[*]}") # Join the string back together with '+'
-	if [ -n "$searchString" ]; then
-		surf -z 1.2 "https://duckduckgo.com/?q=$searchString"	# Return the new search string.
+	if [ -n "$searchT" ]; then
+		lower="$(echo "${searchT:0:3}" | tr "[:upper:]" "[:lower:]")" # Change string to lower.
+		if [ $lower = "yt:" ]; then
+			IFS=":"; temp=( $searchT ); unset IFS;
+			IFS=" "; searchArr=(${temp[1]}); unset IFS;       # Split string by spaces.
+			searchString="$(IFS="+"; echo "${searchArr[*]}")"	  # Join the string back together with '+'
+			$browser "https://www.youtube.co.uk/results?search_query=$searchString"   # I removed extraCmds here because I like youtube on 100% zoom.
+
+		elif [ $lower = "yt" ]; then
+			$browser "https://www.youtube.co.uk/"
+		else
+			IFS=" "; searchArr=($searchT); unset IFS;       # Split string by spaces.
+			searchString="$(IFS="+"; echo "${searchArr[*]}")" # Join the string back together with '+'
+			$browser $extraCmds "$searchEng$qryFmt$searchString"	# Open browser with new search string.
+		fi
 	else
-		surf -z 1.2 "https://duckduckgo.com/"
+		$browser $extraCmds "$searchEng"
 	fi
+
 	if [ ! $? -eq 0 ]; then
 		./tools/writeToLog.sh "surf exited with error code: $?"
 	fi
