@@ -1,6 +1,6 @@
 #!/bin/bash
 
-browser=surf  # Set browser here
+browser=firefox  # Set browser here
 searchEng="https://duckduckgo.com/"
 brQryFmt="?q=" # Set query formatting for search engine.
 extraCmds=""  # Set any extra commands for all browsers here

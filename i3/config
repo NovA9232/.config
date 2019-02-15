@@ -110,7 +110,7 @@ bindsym Mod4+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym Mod4+s layout stacking
-bindsym Mod4+w layout tabbed
+bindsym Mod4+t layout tabbed
 bindsym Mod4+e layout toggle split
 
 # toggle tiling / floating
@@ -248,7 +248,9 @@ gaps outer 0
 #Get layout for wkspace2
 #exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/josh/.config/i3/workspace-2.json'"
 
-bindsym Mod4+g exec surf -z 1.2 https://duckduckgo.com/
+bindsym Mod4+w exec flameshot gui
+
+bindsym Mod4+g exec firefox #surf -z 1.2 https://duckduckgo.com/
 bindsym Mod4+y exec surf https://www.youtube.co.uk/
 bindsym Mod4+p exec ~/.config/scripts/search.sh
 
