@@ -21,7 +21,7 @@
 
 # Load wallpaper and visual tings
 exec_always nitrogen --restore --set-auto
-exec compton -f --no-fading-openclose
+exec compton -f
 exec_always --no-startup-id ~/.config/i3/polybar.sh
 
 # Variable setting
@@ -36,7 +36,7 @@ set $right l
 font pango:Awesome 12
 
 ########## Keybindings ##########
-bindsym Mod4+Shift+s exec i3lock-fancy # Easier locking
+bindsym Mod4+Shift+s exec betterlockscreen -l blur -t "\$#!? off" # Easier locking
 
 ### Backlight ###
 # Note: If light doesn't work, install xbacklight and 1) uncomment the two lines below.
@@ -248,7 +248,8 @@ gaps outer 0
 
 #exec budgie-panel --replace
 
-bindsym Mod4+g exec surf -z 1.5 https://duckduckgo.com/
+bindsym Mod4+Shift+p exec playerctl play-pause
+bindsym Mod4+g exec firefox
 bindsym Mod4+p exec ~/.config/scripts/search.sh
 bindsym Mod4+y exec surf -z 1.5 https://www.youtube.co.uk/
 bindsym Mod4+c exec nautilus
