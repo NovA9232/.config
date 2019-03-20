@@ -1,6 +1,6 @@
 #!/bin/bash
 
-killall -q "killall -q /bin/bash /home/josh/.config/scripts/wallpaperChanger"
+killall -q "/bin/bash /home/josh/.config/scripts/wallpaperChanger"
 
 while :
 do
