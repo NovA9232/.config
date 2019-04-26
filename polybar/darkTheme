@@ -28,16 +28,16 @@ override-redirect = false
 ;-------;
 
 font-0 = Hack:size=10;3
-font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
-font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
-font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=11;3"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=11;3"
+font-3 = "Font Awesome 5 Brands:pixelsize=11;3"
 
 ;--------;
 ; COLORS ;
 ;--------;
 
 background = 0
-foreground = #ffffff
+foreground = #000000
 border-color = 0
 
 ;---------------;
@@ -88,16 +88,16 @@ override-redirect = false
 ;-------;
 
 font-0 = Hack:size=10;3
-font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
-font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
-font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=11;3"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=11;3"
+font-3 = "Font Awesome 5 Brands:pixelsize=11;3"
 
 ;--------;
 ; COLORS ;
 ;--------;
 
 background = 0
-foreground = #ffffff
+foreground = #000000
 border-color = 0
 
 ;---------------;
@@ -156,7 +156,7 @@ font-3 = "Font Awesome 5 Brands:pixelsize=10;3"
 ;--------;
 
 background = 0
-foreground = #ffffff
+foreground = #000000
 border-color = 0
 
 ;---------------;
@@ -201,8 +201,8 @@ pin-workspaces = true
 strip-wsnumbers = true
 enable-scroll = false
 
-label-unfocused-foreground = #b784ff
-label-focused-foreground = #ffffff
+label-unfocused-foreground = #5588ff
+label-focused-foreground = #000000
 label-urgent-foreground = #ff0000
 
 [module/time]
