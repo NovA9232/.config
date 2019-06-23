@@ -32,7 +32,7 @@ if [ $? -eq 0 ]; then  # If dmenu ran fine.
 	fi
 
 	if [ ! $? -eq 0 ]; then
-		./tools/writeToLog.sh "surf exited with error code: $?"
+		./tools/writeToLog.sh "$browser exited with error code: $?"
 	fi
 else
 	if [ ! $? -eq 1 ]; then # if the error was not 1 - which is the number dmenu gives when the escape key is pressed.
