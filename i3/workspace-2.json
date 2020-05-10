@@ -1,5 +1,6 @@
+// vim:ts=4:sw=4:et
 {
-     splith split container with 3 children
+    // splith split container with 2 children
     "border": "normal",
     "floating": "auto_off",
     "layout": "splith",
@@ -8,7 +9,28 @@
     "nodes": [
         {
             "border": "pixel",
-            "current_border_width": 3,
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 410,
+               "width": 650,
+               "x": 0,
+               "y": 0
+            },
+            "name": "gotop /home/josh",
+            "percent": 0.45,
+            "swallows": [
+               {
+                "class": "^Termite$",
+                "instance": "^termite$",
+                "title": "^gotop\\ \\/home\\/josh$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 1,
             "floating": "auto_off",
             "geometry": {
                "height": 600,
@@ -16,58 +38,13 @@
                "x": 0,
                "y": 0
             },
-            "name": "Spotify",
-            "percent": 0.508333333333333,
+            "name": "Spotify Premium",
+            "percent": 0.55,
             "swallows": [
                {
                 "class": "^Spotify$",
                 "instance": "^spotify$",
-                "title": "^Spotify$",
-                "transient_for": "^$"
-               }
-            ],
-            "type": "con"
-        },
-        {
-            "border": "pixel",
-            "current_border_width": 3,
-            "floating": "auto_off",
-            "geometry": {
-               "height": 550,
-               "width": 800,
-               "x": 0,
-               "y": 0
-            },
-            "name": "josh@josh-pc: nvtop",
-            "percent": 0.283333333333333,
-            "swallows": [
-               {
-                "class": "^Termite$",
-                "instance": "^termite$",
-                "title": "^josh\\@josh\\-pc\\:\\ nvtop$",
-                "transient_for": "^$"
-               }
-            ],
-            "type": "con"
-        },
-        {
-            "border": "pixel",
-            "current_border_width": 3,
-            "floating": "auto_off",
-            "geometry": {
-               "height": 550,
-               "width": 800,
-               "x": 0,
-               "y": 0
-            },
-            "name": "josh@josh-pc: tty-clock -c",
-            "percent": 0.208333333333333,
-            "swallows": [
-               {
-                "class": "^Termite$",
-                "instance": "^termite$",
-                "title": "^josh\\@josh\\-pc\\:\\ tty\\-clock\\ \\-c$",
-                "transient_for": "^$"
+                "title": "^Spotify\\ Premium$"
                }
             ],
             "type": "con"
@@ -76,7 +53,7 @@
 }
 
 {
-     splith split container with 2 children
+    // splith split container with 2 children
     "border": "normal",
     "floating": "auto_off",
     "layout": "splith",
@@ -84,45 +61,74 @@
     "type": "con",
     "nodes": [
         {
-            "border": "pixel",
-            "current_border_width": 3,
+            // splith split container with 2 children
+            "border": "normal",
             "floating": "auto_off",
-            "geometry": {
-               "height": 550,
-               "width": 800,
-               "x": 0,
-               "y": 0
-            },
-            "name": "htop",
+            "layout": "splith",
             "percent": 0.45,
-            "swallows": [
-               {
-                "class": "^Termite$",
-                "instance": "^termite$",
-                "title": "^htop$",
-                "transient_for": "^$"
-               }
-            ],
-            "type": "con"
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 410,
+                       "width": 650,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "nvtop /home/josh",
+                    "percent": 0.65,
+                    "swallows": [
+                       {
+                        "class": "^Termite$",
+                        "instance": "^termite$",
+                        "title": "^nvtop\\ \\/home\\/josh$"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "pixel",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 410,
+                       "width": 650,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "tty-clock /home/josh",
+                    "percent": 0.35,
+                    "swallows": [
+                       {
+                        "class": "^Termite$",
+                        "instance": "^termite$",
+                        "title": "^tty\\-clock\\ \\/home\\/josh$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
         },
         {
             "border": "pixel",
-            "current_border_width": 3,
+            "current_border_width": 1,
             "floating": "auto_off",
             "geometry": {
-               "height": 1029,
-               "width": 363,
-               "x": 0,
-               "y": 0
+               "height": 511,
+               "width": 1039,
+               "x": 870,
+               "y": 843
             },
-            "name": "Discord",
+            "name": "Activity - Discord",
             "percent": 0.55,
             "swallows": [
                {
                 "class": "^discord$",
                 "instance": "^discord$",
-                "title": "^Discord$",
-                "transient_for": "^$",
+                "title": "^Activity\\ \\-\\ Discord$",
                 "window_role": "^browser\\-window$"
                }
             ],

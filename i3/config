@@ -16,7 +16,7 @@
 #
 
 ##Sort out displays first
-exec ~/displayPos.sh
+exec ~/.config/scripts/displayPos.sh
 
 # i3 config file (v4)
 #
@@ -54,9 +54,6 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioNext exec playerctl next
 
-### Other ###
-bindsym Print exec scrot -q 100
-
 ### Sound ###
 # Raise Volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
@@ -68,7 +65,7 @@ bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle-mu
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite -e fish
+bindsym $mod+Return exec termite -e zsh
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -257,10 +254,12 @@ bindsym $mod+w exec flameshot gui
 bindsym $mod+g exec firefox #surf -z 1.2 https://duckduckgo.com/
 bindsym $mod+y exec surf https://www.youtube.co.uk/
 bindsym $mod+p exec ~/.config/scripts/search.sh
+bindsym Pause exec amixer set Capture toggle	# Mute/unmute microphone
 
 bindsym $mod+c exec nautilus
 bindsym $mod+Shift+h exec systemctl suspend
-exec compton -f -C
+bindsym $mod+Shift+d exec ~/.config/scripts/start_6cord.sh
+exec picom -bcC
 exec_always --no-startup-id ~/.config/i3/polybar.sh
 exec_always nitrogen --restore --set-auto
 focus_follows_mouse yes

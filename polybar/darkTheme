@@ -315,7 +315,7 @@ label = %output:0:150%
 [module/wlan]
 type = internal/network
 
-interface = wlp2s0
+interface = wlp4s0
 
 interval = 5
 
@@ -333,7 +333,7 @@ label =  %gb_used%
 
 [module/network]
 type = internal/network
-interface = wlp2s0
+interface = wlp4s0
 label-connected =  %downspeed% |  %upspeed%
 
 [bar/float]

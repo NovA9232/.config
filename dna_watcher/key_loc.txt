@@ -1,0 +1,1 @@
+/home/josh/.config/Idena/node/datadir/api.key
